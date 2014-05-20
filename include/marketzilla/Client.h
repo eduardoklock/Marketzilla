@@ -2,18 +2,19 @@
 #define _Client_h_
 
 #include "ShoppingCart.h"
+#include "Payment.h"
 
 namespace marketzilla{
 
 class Client {
 public:
-	Client(ShoppingCart);
+	Client(ShoppingCart, Payment);
 	~Client();
-	double payment();
-	int totalItems();
-
+	Payment makePayment() const;
+	ShoppingCart passShopping() const;
 private:
 	ShoppingCart cart;
+	Payment payment;
 };
 }
 #endif

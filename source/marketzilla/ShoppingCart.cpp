@@ -24,12 +24,12 @@ void ShoppingCart::generateValue()
 	}	
 }
 
-int ShoppingCart::retrunTotalItems()
+int ShoppingCart::retrunTotalItems() const
 {
 	return totalItems;
 }
 
-double ShoppingCart::returnTotalValue()
+double ShoppingCart::returnTotalValue() const
 {
 	return totalValue;
 }
