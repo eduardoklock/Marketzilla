@@ -1,5 +1,5 @@
 # the compiler to use.
-COMPILER = g++
+COMPILER = clang++
 
 # include path
 INCLUDE = include/
@@ -11,10 +11,7 @@ SOURCES = source/marketzilla/*.cpp
 TEST_SOURCES = test/marketzilla/*.cpp
 
 # depencences
-LIBS = lgtest
-
-# options I'll pass to the compiler.
-FLAGS = $(INCLUDE) $(LIBS)
+LIBS = gtest
 
 # executable name
 EXECUTABLE = marketzilla
@@ -22,7 +19,7 @@ EXECUTABLE = marketzilla
 all: test
 
 test: $(SOURCES) $(TEST_SOURCES)
-	$(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) -I$(INCLUDE) -$(LIBS)
+	$(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) -I$(INCLUDE) -l$(LIBS)
 	./$(EXECUTABLE)
 
 clean:
