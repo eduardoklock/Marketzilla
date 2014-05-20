@@ -7,12 +7,13 @@ namespace marketzilla{
 
 class Client {
 public:
-	Client(ShoppingCart){}
-	~Client(){}
-	double payment(){}
-	int totalItems(){}
+	Client(ShoppingCart);
+	~Client();
+	double payment();
+	int totalItems();
 
 private:
 	ShoppingCart cart;
 };
 }
+#endif

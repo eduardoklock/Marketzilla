@@ -1,25 +1,25 @@
-#include "ShoppingCart.h"
+#include <marketzilla/ShoppingCart.h>
 
 namespace marketzilla{
 
 ShoppingCart::ShoppingCart()
 {
-	totalItems();
-	totalValue();
+	generateItems();
+	generateValue();
 }
 
 ShoppingCart::~ShoppingCart(){}
 
 void ShoppingCart::generateItems()
 {
-	totalItems = rand() % 99 + 2
+	totalItems = rand() % 99 + 2;
 }
 
 void ShoppingCart::generateValue()
 {
 	for(int i = 0; i < totalItems; i++)
 	{
-		totalValue = totalValue + rand() % 90 + 1
+		totalValue = totalValue + rand() % 90 + 1;
 		
 	}	
 }

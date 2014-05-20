@@ -5,7 +5,7 @@ namespace marketzilla{
 
 class Money : public FormOfPayment{
 public:
-	void pay(Cashier&){}
+	void pay(Cashier&);
 private:
 
 };

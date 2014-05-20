@@ -7,15 +7,16 @@ namespace marketzilla{
 
 class ShoppingCart {
 public:
-	ShoppingCart(){}
-	~ShoppingCart(){}
-	int retrunTotalItems(){}
-	double returnTotalValue(){}
+	ShoppingCart();
+	~ShoppingCart();
+	int retrunTotalItems();
+	double returnTotalValue();
 private:
 	int totalItems;
 	double totalValue;
 
-	void generateItems(){}
-	void generateValue(){}
+	void generateItems();
+	void generateValue();
 };
 }
+#endif
