@@ -18,5 +18,6 @@ private:
 	void generateItems();
 	void generateValue();
 };
+
 }
 #endif
