@@ -9,8 +9,8 @@ class ShoppingCart {
 public:
 	ShoppingCart();
 	~ShoppingCart();
-	int retrunTotalItems();
-	double returnTotalValue();
+	int retrunTotalItems() const;
+	double returnTotalValue() const;
 private:
 	int totalItems;
 	double totalValue;

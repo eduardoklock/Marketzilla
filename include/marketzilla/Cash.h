@@ -1,14 +1,14 @@
-#ifndef _Check_h_
-#define _Check_h_
+#ifndef _Cahs_h_
+#define _Cahs_h_
 
 #include "Payment.h"
 
 namespace marketzilla{
 
-class Check : public Payment {
+class Cash : public Payment {
 public:
-	Check();
-	~Check();
+	Cash();
+	~Cash();
 	double addTime(Cashier&) const;
 private:
 
