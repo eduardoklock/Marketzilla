@@ -1,7 +1,7 @@
 #ifndef _Market_h_
 #define _Market_h_
 
-namespace maketzilla {
+namespace marketzilla {
 
 class Market{
 public:

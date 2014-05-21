@@ -2,18 +2,10 @@
 
 namespace marketzilla{
 
-Client::Client(ShoppingCart cart):
-cart(cart)
-{
-    if(rand() % 5 == 0)
-    {
-        payment = new Check();
-    }
-    else
-    {
-        payment = new Cash();
-    }
-}
+Client::Client(ShoppingCart cart, Payment* payment):
+cart(cart),
+payment(payment)
+{}
 
 Client::~Client()
 {}

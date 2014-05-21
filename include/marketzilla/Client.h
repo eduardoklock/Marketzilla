@@ -10,7 +10,7 @@ namespace marketzilla{
 
 class Client {
 public:
-	Client(ShoppingCart);
+	Client(ShoppingCart, Payment*);
 	~Client();
 	Payment* makePayment() const;
 	ShoppingCart passShopping() const;
