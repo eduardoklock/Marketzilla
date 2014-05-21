@@ -2,7 +2,7 @@
 COMPILER = clang++
 
 # include path
-INCLUDE = include/
+INCLUDE = -Iinclude/
 
 # program souce files
 SOURCES = source/marketzilla/*.cpp
@@ -11,7 +11,7 @@ SOURCES = source/marketzilla/*.cpp
 TEST_SOURCES = test/marketzilla/*.cpp
 
 # depencences
-LIBS = -lgtest -lgmock
+LIBS = -lgtest -lgmock -pthread
 
 # executable name
 EXECUTABLE = marketzilla
@@ -19,7 +19,7 @@ EXECUTABLE = marketzilla
 all: test
 
 test: $(SOURCES) $(TEST_SOURCES)
-	$(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) -I$(INCLUDE) $(LIBS)
+	$(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) $(INCLUDE) $(LIBS)
 	./$(EXECUTABLE)
 
 clean:
