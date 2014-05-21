@@ -8,7 +8,7 @@ Cash::Cash()
 Cash::~Cash()
 {}
 
-double Cash::addTime (Cashier& cashier) const
+double Cash::delay() const
 {
 	return 0;
 }

@@ -8,7 +8,7 @@ Check::Check()
 Check::~Check()
 {}
 
-double Check::addTime (Cashier& cashier) const
+double Check::delay() const
 {
 	/*
 		depende da eficiencia do caixa, se ruim retorna

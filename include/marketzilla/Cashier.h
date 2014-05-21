@@ -4,7 +4,7 @@
 #include <dataStructures/Queue.h>
 
 #include "Attendant.h"
-//#include "Client.h"
+#include "Client.h"
 
 using dataStructures::Queue;
 

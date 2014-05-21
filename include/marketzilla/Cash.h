@@ -9,9 +9,7 @@ class Cash : public Payment {
 public:
 	Cash();
 	~Cash();
-	double addTime(Cashier&) const;
-private:
-
+	double delay() const;
 };
 
 }
