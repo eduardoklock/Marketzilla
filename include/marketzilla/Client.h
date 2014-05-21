@@ -8,13 +8,13 @@ namespace marketzilla{
 
 class Client {
 public:
-	Client(ShoppingCart, Payment);
+	Client(ShoppingCart, Payment*);
 	~Client();
-	Payment makePayment() const;
+	Payment* makePayment() const;
 	ShoppingCart passShopping() const;
 private:
 	ShoppingCart cart;
-	Payment payment;
+	Payment* payment;
 };
 }
 #endif

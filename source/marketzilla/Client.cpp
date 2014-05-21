@@ -3,20 +3,20 @@
 
 namespace marketzilla{
 
-Client::Client(ShoppingCart cart, Payment payment):
-cart(cart)
+Client::Client(ShoppingCart cart, Payment* payment):
+cart(cart),
 payment(payment)
 {}
 
 Client::~Client()
 {}
 
-Client::makePayment() const
+Payment* Client::makePayment() const
 {
     return payment;
 }
 
-Client::passShopping() const
+ShoppingCart Client::passShopping() const
 {
     return cart;
 }
