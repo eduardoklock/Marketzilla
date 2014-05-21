@@ -2,6 +2,7 @@
 #define _Check_h_
 
 #include "Payment.h"
+#include "Cashier.h"
 
 namespace marketzilla{
 

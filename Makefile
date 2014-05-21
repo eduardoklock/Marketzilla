@@ -11,7 +11,7 @@ SOURCES = source/marketzilla/*.cpp
 TEST_SOURCES = test/marketzilla/*.cpp
 
 # depencences
-LIBS = gtest
+LIBS = -lgtest -lgmock
 
 # executable name
 EXECUTABLE = marketzilla
@@ -19,7 +19,7 @@ EXECUTABLE = marketzilla
 all: test
 
 test: $(SOURCES) $(TEST_SOURCES)
-	$(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) -I$(INCLUDE) -l$(LIBS)
+	$(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) -I$(INCLUDE) $(LIBS)
 	./$(EXECUTABLE)
 
 clean:
