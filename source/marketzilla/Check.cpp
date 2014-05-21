@@ -15,7 +15,7 @@ double Check::addTime (Cashier& cashier) const
 		6, medio 2,5, bom 1
 
 	*/
-		return 0;
+		return 10;
 }
 
 }

@@ -11,7 +11,7 @@ SOURCES = source/marketzilla/*.cpp
 TEST_SOURCES = test/marketzilla/*.cpp
 
 # depencences
-LIBS = -lgtest -lgmock -pthread
+LIBS = -lgtest
 
 # executable name
 EXECUTABLE = marketzilla
