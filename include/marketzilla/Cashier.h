@@ -4,7 +4,7 @@
 #include <dataStructures/Queue.h>
 
 #include "Attendant.h"
-#include "Client"
+//#include "Client.h"
 
 using dataStructures::Queue;
 
@@ -16,7 +16,7 @@ public:
 
 private:
     Attendant attendent;
-    Queue<Client*> queue;
+    //Queue<Client*> queue;
 };
 
 }

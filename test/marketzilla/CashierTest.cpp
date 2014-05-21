@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+/*#include <gtest/gtest.h>
 #include <marketzilla/Cashier.h>
 
 using marketzilla::Cashier;
@@ -10,4 +10,4 @@ class CashierTest : public testing::Test {
 TEST_F(CashierTest, cashierIsEmpty)
 {
     
-}
+}*/
