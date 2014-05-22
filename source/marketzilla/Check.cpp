@@ -2,12 +2,6 @@
 
 namespace marketzilla{
 
-Check::Check()
-{}
-
-Check::~Check()
-{}
-
 double Check::delay() const
 {
 	/*

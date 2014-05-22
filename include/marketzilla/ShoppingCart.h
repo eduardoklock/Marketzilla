@@ -7,8 +7,7 @@ namespace marketzilla{
 
 class ShoppingCart {
 public:
-	ShoppingCart();
-	~ShoppingCart();
+    ShoppingCart();
 	int retrunTotalItems() const;
 	double returnTotalValue() const;
 private:

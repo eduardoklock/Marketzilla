@@ -7,8 +7,6 @@ namespace marketzilla{
 
 class Check : public Payment {
 public:
-	Check();
-	~Check();
 	double delay() const;
 };
 

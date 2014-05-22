@@ -8,8 +8,6 @@ ShoppingCart::ShoppingCart()
 	generateValue();
 }
 
-ShoppingCart::~ShoppingCart(){}
-
 void ShoppingCart::generateItems()
 {
 	totalItems = rand() % 99 + 2;
