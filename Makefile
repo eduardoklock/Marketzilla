@@ -22,8 +22,8 @@ EXECUTABLE = marketzilla
 all: test
 
 test: $(SOURCES) $(TEST_SOURCES)
-	$(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) $(INCLUDE) $(LIBS) $(FLAGS)
-	./$(EXECUTABLE)
+    $(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) $(INCLUDE) $(LIBS) $(FLAGS)
+    ./$(EXECUTABLE)
 
 clean:
-	rm -rf *.o $(EXECUTABLE)
+    rm -rf *.o $(EXECUTABLE)

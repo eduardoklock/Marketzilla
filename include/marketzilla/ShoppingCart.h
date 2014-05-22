@@ -8,14 +8,14 @@ namespace marketzilla{
 class ShoppingCart {
 public:
     ShoppingCart();
-	int retrunTotalItems() const;
-	double returnTotalValue() const;
+    int retrunTotalItems() const;
+    double returnTotalValue() const;
 private:
-	int totalItems;
-	double totalValue;
+    int totalItems;
+    double totalValue;
 
-	void generateItems();
-	void generateValue();
+    void generateItems();
+    void generateValue();
 };
 
 }

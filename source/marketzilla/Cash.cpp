@@ -4,7 +4,7 @@ namespace marketzilla{
 
 double Cash::delay() const
 {
-	return 0;
+    return 0;
 }
 
 }
