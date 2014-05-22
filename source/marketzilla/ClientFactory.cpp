@@ -2,7 +2,7 @@
 
 namespace marketzilla{
 
-Client& ClientFactory::makeClient()
+Client ClientFactory::makeClient()
 {
     ShoppingCart cart = ShoppingCart();
     Payment* payment;
@@ -23,9 +23,8 @@ Client& ClientFactory::makeClient()
     {
         CashierPreference* preference = new LessItems();
     }
-    Client client = Client(cart, payment, preference);
 
-    return client;
+    return Client(cart, payment, preference);
 }
 
 }

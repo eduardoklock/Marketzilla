@@ -16,7 +16,7 @@ public:
 
 private:
     Attendant attendent;
-    //Queue<Client*> queue;
+    Queue<Client*> queue;
 };
 
 }
