@@ -14,9 +14,13 @@ class Cashier {
 public:
     Cashier(const Attendant&);
 
+    //_attendent.recivepayment(_queue.pop.pay());
+
+    //queue.pop.pay(_attendant);
+
 private:
-    Attendant _attendent;
-    Queue<Client&> _queue;
+    Attendant _attendant;
+    Queue<Client> _queue;
 };
 
 }
