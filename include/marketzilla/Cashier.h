@@ -15,8 +15,8 @@ public:
     Cashier(const Attendant&);
 
 private:
-    Attendant attendent;
-    Queue<Client*> queue;
+    Attendant _attendent;
+    Queue<Client&> _queue;
 };
 
 }

@@ -7,7 +7,7 @@ namespace marketzilla{
 
 class LessItems : public CashierPreference {
 public: 
-    void chooseQueue(const Market&);
+    void chooseCashier(const Market&);
 
 };
 

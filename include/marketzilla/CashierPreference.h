@@ -7,7 +7,7 @@ namespace marketzilla{
 
 class CashierPreference {
 public:
-    virtual void chooseQueue(const Market&) = 0;
+    virtual void chooseCashier(const Market&) = 0;
 
 };
 

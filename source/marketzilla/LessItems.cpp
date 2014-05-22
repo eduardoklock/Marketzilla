@@ -2,7 +2,7 @@
 
 namespace marketzilla{
 
-void LessItems::chooseQueue(const Market& market)
+void LessItems::chooseCashier(const Market& market)
 {
     
 }
