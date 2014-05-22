@@ -8,11 +8,12 @@ namespace dataStructures {
 
 template <class T>
 class DoublyLinkedList : public dataStructures::List<T> {
-	struct Node{
+	class Node{
+	public:
 		Node(Node* previous, Node* next, const T& element):
-		previous(previous),
-		next(next),
-		element(element)
+			previous(previous),
+			next(next),
+			element(element)
 		{}
 
 		Node* previous;
@@ -49,12 +50,12 @@ public:
 	void pushBack(const T &element)
 	{
 		if (_size == 0) {
-			first = last = new Node(0, 0, element);
+			first = last = new Node{0, 0, element};
 			++_size;
 			return;
 		}
 
-		last->next = new Node(last, 0, element);
+		last->next = new Node{last, 0, element};
 		last = last->next;
 
 		++_size;
@@ -63,12 +64,12 @@ public:
 	void pushFront(const T &element)
 	{
 		if (_size == 0) {
-			first = last = new Node(0, 0, element);
+			first = last = new Node{0, 0, element};
 			++_size;
 			return;
 		}
 
-		first->previous = new Node(0, first, element);
+		first->previous = new Node{0, first, element};
 		first = first->previous;
 
 		++_size;
@@ -91,7 +92,7 @@ public:
 			aux = aux->next;
 		}
 
-		aux->previous->next = new Node(aux->previous, aux, element);
+		aux->previous->next = new Node{aux->previous, aux, element};
 		aux->previous = aux->previous->next;
 
 		++_size;

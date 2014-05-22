@@ -9,7 +9,7 @@ namespace marketzilla {
 
 class Attendant {
 public:
-    Attendant(const string&, const double&);
+    Attendant(const string&, double);
     string name() const;
     double salary() const;
 private:

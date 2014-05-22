@@ -1,8 +1,8 @@
-#include <marketzilla/Client.h>
+#include "marketzilla/Client.h"
 
 namespace marketzilla{
 
-Client::Client(ShoppingCart cart, Payment* payment, CashierPreference* preference):
+Client::Client(const ShoppingCart& cart, Payment* payment, CashierPreference* preference):
 cart(cart),
 payment(payment),
 preference(preference)

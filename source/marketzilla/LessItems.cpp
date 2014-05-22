@@ -1,8 +1,11 @@
-#include <marketzilla/LessItems.h>
+#include "dataStructures/CircularList.h"
+#include "marketzilla/LessItems.h"
+
+using dataStructures::CircularList;
 
 namespace marketzilla{
 
-void LessItems::chooseCashier(const Market& market)
+void LessItems::chooseCashier(const CircularList<Cashier>& cashiers)
 {
     
 }

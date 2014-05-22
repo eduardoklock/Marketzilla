@@ -1,4 +1,9 @@
-#include <marketzilla/ClientFactory.h>
+#include "marketzilla/ClientFactory.h"
+#include "marketzilla/Cash.h"
+#include "marketzilla/Check.h"
+#include "marketzilla/ShorterQueue.h"
+#include "marketzilla/LessItems.h"
+#include <stdlib.h>
 
 namespace marketzilla{
 

@@ -5,7 +5,7 @@ using std::string;
 
 namespace marketzilla {
 
-Attendant::Attendant(const string& name, const double& salary):
+Attendant::Attendant(const string& name, double salary):
     _name(name),
     _salary(salary)
 {}

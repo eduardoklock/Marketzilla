@@ -1,19 +1,23 @@
 #ifndef _Client_h_
 #define _Client_h_
 
+#include "dataStructures/CircularList.h"
+
 #include "ShoppingCart.h"
-#include "Cash.h"
-#include "Check.h"
-#include "LessItems.h"
-#include "ShorterQueue.h"
-#include <stdlib.h>
+#include "Payment.h"
+#include "CashierPreference.h"
+
+using dataStructures::CircularList;
 
 namespace marketzilla{
 
 class Client {
 public:
-	Client(ShoppingCart, Payment*, CashierPreference*);
+	Client(const ShoppingCart&, Payment*, CashierPreference*);
 	~Client();
+
+    void choseCashier(const CircularList<Cashier>&);
+
 	Payment* makePayment() const;
 	ShoppingCart passShopping() const;
 private:

@@ -20,7 +20,7 @@ public:
 
 private:
     Attendant _attendant;
-    Queue<Client> _queue;
+    //Queue<Client> _queue;
 };
 
 }

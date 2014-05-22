@@ -8,6 +8,10 @@ namespace dataStructures {
 template <class T, class Container = dataStructures::DoublyLinkedList<T> >
 class Queue {
 public:
+  Queue():
+    container()
+  {}
+
   int size() const
   {
     return container.size();
