@@ -7,7 +7,7 @@ namespace marketzilla {
 
 class ClientFactory {
 public:
-    static Client& makeClient() const;
+    static Client& makeClient();
 
 };
 

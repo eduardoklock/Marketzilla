@@ -2,9 +2,10 @@
 
 namespace marketzilla{
 
-Client::Client(ShoppingCart cart, Payment* payment):
+Client::Client(ShoppingCart cart, Payment* payment, CashierPreference* preference):
 cart(cart),
-payment(payment)
+payment(payment),
+preference(preference)
 {}
 
 Client::~Client()
