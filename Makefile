@@ -1,29 +1,29 @@
 # the compiler to use.
-COMPILER = clang++
+COMPILER=clang++
 
 # include path
-INCLUDE = -Iinclude/
+INCLUDE=-Iinclude
 
 # program souce files
-SOURCES = source/marketzilla/*.cpp
+SOURCES=source/marketzilla/*.cpp
 
 # test source files
-TEST_SOURCES = test/marketzilla/*.cpp
+TEST_SOURCES=$(SOURCES) test/marketzilla/*.cpp
 
 # depencences
-LIBS = -lgtest
+LIBS=-lgtest
 
 # flags for compiling
-FLAGS = -std=c++11
+FLAGS=-std=c++11
 
 # executable name
-EXECUTABLE = marketzilla
+EXECUTABLE=marketzilla
 
 all: test
 
-test: $(SOURCES) $(TEST_SOURCES)
-    $(COMPILER) -o $(EXECUTABLE) $(SOURCES) $(TEST_SOURCES) $(INCLUDE) $(LIBS) $(FLAGS)
-    ./$(EXECUTABLE)
+test: $(TEST_SOURCES)
+	$(COMPILER) -o $(EXECUTABLE) $(TEST_SOURCES) $(INCLUDE) $(LIBS) $(FLAGS)
+	./$(EXECUTABLE)
 
 clean:
-    rm -rf *.o $(EXECUTABLE)
+	rm -rf *.o $(EXECUTABLE)
