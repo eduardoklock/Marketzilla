@@ -9,12 +9,14 @@ namespace marketzilla {
 
 class Attendant {
 public:
-    Attendant(const string&, double);
+    Attendant(const string&, double, int);
     string name() const;
     double salary() const;
+    int eficiency() const;
 private:
     string _name;
     double _salary;
+    int _eficiency;
 };
 
 }

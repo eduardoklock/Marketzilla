@@ -1,7 +1,7 @@
 #ifndef _Cashier_h_
 #define _Cashier_h_
 
-#include <dataStructures/Queue.h>
+#include "dataStructures/Queue.h"
 
 #include "Attendant.h"
 #include "Client.h"
@@ -14,9 +14,11 @@ class Cashier {
 public:
     Cashier(const Attendant&);
 
-    //_attendent.recivepayment(_queue.pop.pay());
+    int queueItems() const;
 
-    //queue.pop.pay(_attendant);
+    int queueLength() const;
+
+    void enterQueue(const Client&);
 
 private:
     Attendant _attendant;

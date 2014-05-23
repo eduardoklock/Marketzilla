@@ -5,8 +5,8 @@ using marketzilla::Attendant;
 
 class AttendantTest : public testing::Test {
 public:
-    Attendant alice = Attendant("Alice", 1985);
-    Attendant bob = Attendant("Robert", 42);
+    Attendant alice = Attendant("Alice", 1985, 0);
+    Attendant bob = Attendant("Robert", 42, 0);
 };
 
 TEST_F(AttendantTest, doAttendantHasProperName)
