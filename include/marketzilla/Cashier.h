@@ -14,6 +14,8 @@ class Cashier {
 public:
     Cashier(const Attendant&);
 
+    Cashier();
+
     int queueItems() const;
 
     int queueLength() const;

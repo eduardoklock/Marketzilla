@@ -11,7 +11,7 @@ class Cashier;
 
 class CashierPreference {
 public:
-    virtual void chooseCashier(const CircularList<Cashier>&) = 0;
+    virtual Cashier& chooseCashier(CircularList<Cashier>&) = 0;
 };
 
 }

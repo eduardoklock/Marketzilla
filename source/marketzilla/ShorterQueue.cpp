@@ -6,9 +6,25 @@ using dataStructures::CircularList;
 
 namespace marketzilla{
 
-void ShorterQueue::chooseCashier(const CircularList<Cashier>& cashiers)
+Cashier& ShorterQueue::chooseCashier(CircularList<Cashier>& cashiers)
 {
-    
+
+    auto j = cashiers.begin();
+    auto i = cashiers.begin();
+    Cashier& cashier = *i;
+    while(i != cashiers.end())
+    {
+        ++j;
+        if(i->queueLength() > j->queueLength())
+        {
+            Cashier& cashier = *j;
+        }
+        ++i;
+  
+    }
+
+    return cashier;
+
 }
 
 }

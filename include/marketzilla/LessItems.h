@@ -10,7 +10,7 @@ namespace marketzilla{
 
 class LessItems : public CashierPreference {
 public: 
-    void chooseCashier(const CircularList<Cashier>&);
+    Cashier& chooseCashier(CircularList<Cashier>&);
 
 };
 

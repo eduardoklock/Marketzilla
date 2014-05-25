@@ -9,9 +9,10 @@ namespace marketzilla{
 
 Client ClientFactory::makeClient()
 {
-    ShoppingCart cart = ShoppingCart();
     Payment* payment;
     CashierPreference* preference;
+    int _totalItems;
+    double _totalItemsValue;
     if(rand() % 5 == 0)
     {
         Payment* payment = new Cash();
@@ -29,7 +30,16 @@ Client ClientFactory::makeClient()
         CashierPreference* preference = new LessItems();
     }
 
-    return Client(cart, payment, preference);
+    _totalItems = rand() % 99 + 2;
+    
+
+ 
+    for(int i = 0; i < _totalItems; i++)
+    {
+        _totalItemsValue = _totalItemsValue + rand() % 90 + 1;      
+    }
+
+    return Client(payment, preference, _totalItems, _totalItemsValue);
 }
 
 }

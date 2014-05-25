@@ -3,7 +3,6 @@
 
 #include "dataStructures/CircularList.h"
 
-#include "ShoppingCart.h"
 #include "Payment.h"
 #include "CashierPreference.h"
 
@@ -13,17 +12,18 @@ namespace marketzilla{
 
 class Client {
 public:
-	Client(const ShoppingCart&, Payment*, CashierPreference*);
+	Client(Payment*, CashierPreference*, int, double);
 	~Client();
 
-    void choseCashier(const CircularList<Cashier>&);
-
+    bool chooseCashier(CircularList<Cashier>&);
 	Payment* makePayment() const;
-	ShoppingCart passShopping() const;
+    int totalItems() const;
+    double totalItemsValue() const;
 private:
-	ShoppingCart cart;
 	Payment* payment;
     CashierPreference* preference;
+    int _totalItems;
+    double _totalItemsValue;
     
 };
 }
