@@ -7,6 +7,9 @@ INCLUDE=-Iinclude
 # program souce files
 SOURCES=source/marketzilla/*.cpp
 
+# build source
+BUILD_SOUCES=$(SOURCES) main.cpp
+
 # test source files
 TEST_SOURCES=$(SOURCES) test/marketzilla/*.cpp
 
@@ -18,10 +21,17 @@ FLAGS=-std=c++11
 
 # executable name
 EXECUTABLE=marketzilla
+TEST_EXEC=marketzillaTest
 
-all: $(TEST_SOURCES)
-	$(COMPILER) -o $(EXECUTABLE) $(TEST_SOURCES) $(INCLUDE) $(LIBS) $(FLAGS)
+all: test build
+
+test: $(TEST_SOURCES)
+	$(COMPILER) -o $(TEST_EXEC) $(TEST_SOURCES) $(INCLUDE) $(LIBS) $(FLAGS)
+	./$(TEST_EXEC)
+
+build: $(BUILD_SOUCES)
+	$(COMPILER) -o $(EXECUTABLE) $(BUILD_SOUCES) $(INCLUDE) $(LIBS) $(FLAGS)
 	./$(EXECUTABLE)
 
 clean:
-	rm -rf *.o $(EXECUTABLE)
+	rm -rf *.o $(EXECUTABLE) $(TEST_EXEC)
