@@ -19,9 +19,7 @@ FLAGS=-std=c++11
 # executable name
 EXECUTABLE=marketzilla
 
-all: test
-
-test: $(TEST_SOURCES)
+all: $(TEST_SOURCES)
 	$(COMPILER) -o $(EXECUTABLE) $(TEST_SOURCES) $(INCLUDE) $(LIBS) $(FLAGS)
 	./$(EXECUTABLE)
 

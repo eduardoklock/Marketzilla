@@ -11,7 +11,7 @@ Attendant::Attendant(const string& name, double salary, int eficiency):
     _eficiency(eficiency)
 {}
 
-string Attendant::name() const 
+const string Attendant::name() const 
 {
     return _name;
 }
