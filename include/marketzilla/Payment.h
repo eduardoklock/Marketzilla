@@ -6,6 +6,7 @@ namespace marketzilla{
 class Payment {
 public:
 	virtual double delay() const = 0;
+    //virtual ~Payment();
 };
 
 }
