@@ -8,7 +8,8 @@ Cashier::Cashier(const Attendant& attendant):
     _queue(),
     _queueItems(0),
     _servedClients(0),
-    _totalProfit(0)
+    _totalProfit(0),
+    totalWaitingTime(0)
 {}
 
 Cashier::Cashier():
@@ -16,7 +17,8 @@ Cashier::Cashier():
     _queue(),
     _queueItems(0),
     _servedClients(0),
-    _totalProfit(0)
+    _totalProfit(0),
+    totalWaitingTime(0)
 {}
 
 void Cashier::update(int curretTime)
@@ -26,22 +28,27 @@ void Cashier::update(int curretTime)
 
 const std::string Cashier::attendantName() const
 {
-	return _attendant.name();
+    return _attendant.name();
+}
+
+double Cashier::averageWaitingTime() const
+{
+    return totalWaitingTime/_servedClients;
 }
 
 int Cashier::clientsServed() const
 {
-	return _servedClients;
+    return _servedClients;
 }
 
 double Cashier::totalProfit() const
 {
-	return _totalProfit;
+    return _totalProfit;
 }
 
 double Cashier::averageProfit() const
 {
-	return _totalProfit/_servedClients;
+    return _totalProfit/_servedClients;
 }
 
 int Cashier::queueItems() const
@@ -56,7 +63,7 @@ int Cashier::queueLength() const
 
 void Cashier::enterQueue(const Client& client)
 {
-	_queueItems += client.totalItems();
+    _queueItems += client.totalItems();
     _queue.push(client);
 }
 

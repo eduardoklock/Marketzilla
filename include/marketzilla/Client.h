@@ -12,18 +12,18 @@ namespace marketzilla{
 
 class Client {
 public:
-	Client(Payment*, CashierPreference*, int, double);
-	~Client();
+    Client(Payment*, CashierPreference*, int, double);
+    ~Client();
 
     bool chooseCashier(CircularList<Cashier>&);
-	Payment* makePayment() const;
+    Payment* makePayment() const;
     int totalItems() const;
     double totalItemsValue() const;
     int exitTime();
     void setExitTime(int);
 
 private:
-	Payment* payment;
+    Payment* payment;
     CashierPreference* preference;
     int _totalItems;
     double _totalItemsValue;

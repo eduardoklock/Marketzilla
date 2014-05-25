@@ -20,10 +20,11 @@ public:
 
     const std::string attendantName() const;
 
-   	int clientsServed() const;
+    int clientsServed() const;
+    double averageWaitingTime() const;
 
-   	double totalProfit() const;
-   	double averageProfit() const;
+    double totalProfit() const;
+    double averageProfit() const;
 
     int queueItems() const;
     int queueLength() const;
@@ -37,6 +38,7 @@ private:
     int _queueItems;
     int _servedClients;
     double _totalProfit;
+    int totalWaitingTime;
 };
 
 }
