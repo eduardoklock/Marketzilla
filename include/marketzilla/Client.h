@@ -19,11 +19,16 @@ public:
 	Payment* makePayment() const;
     int totalItems() const;
     double totalItemsValue() const;
+    int exitTime();
+    void setExitTime(int);
+
 private:
 	Payment* payment;
     CashierPreference* preference;
     int _totalItems;
     double _totalItemsValue;
+    int _exitTime;
+    
     
 };
 }

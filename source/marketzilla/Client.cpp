@@ -12,8 +12,8 @@ _totalItemsValue(_totalItemsValue)
 
 Client::~Client()
 {
-    delete payment;
-    delete preference;
+    //delete payment;
+    //delete preference;
 }
 
 bool Client::chooseCashier(CircularList<Cashier>& cashiers) 
@@ -47,6 +47,16 @@ int Client::totalItems() const
 double Client::totalItemsValue() const
 {
     return _totalItemsValue;
+}
+
+int Client::exitTime()
+{
+    return _exitTime;
+}
+
+void Client::setExitTime(int _exitTime)
+{
+    _exitTime = _exitTime;
 }
 
 }
