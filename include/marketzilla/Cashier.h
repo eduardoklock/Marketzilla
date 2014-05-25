@@ -20,7 +20,7 @@ public:
 
     const std::string attendantName() const;
 
-   	int servedClients() const;
+   	int clientsServed() const;
 
    	double totalProfit() const;
    	double averageProfit() const;
@@ -29,7 +29,7 @@ public:
     int queueLength() const;
     void enterQueue(const Client&);
 
-    void update();
+    void update(int);
 
 private:
     Attendant _attendant;

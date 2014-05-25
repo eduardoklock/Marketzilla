@@ -15,10 +15,11 @@ Cashier::Cashier():
     _attendant("", 0.0, 0),
     _queue(),
     _queueItems(0),
-    _servedClients(0)
+    _servedClients(0),
+    _totalProfit(0)
 {}
 
-void Cashier::update()
+void Cashier::update(int curretTime)
 {
 
 }
@@ -28,7 +29,7 @@ const std::string Cashier::attendantName() const
 	return _attendant.name();
 }
 
-int Cashier::servedClients() const
+int Cashier::clientsServed() const
 {
 	return _servedClients;
 }
