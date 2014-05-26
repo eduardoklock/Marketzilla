@@ -43,6 +43,9 @@ int main(int argc, char** argv)
     {
         cout << "file not finded" << endl;
     }
+
+    //Market market = Market(marketName, timeOfSimulation, timeOfClientsArive);
+    //Market.simulate();
     
     return 0;
 }
