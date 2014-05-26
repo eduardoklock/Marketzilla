@@ -3,11 +3,12 @@
 
 namespace marketzilla{
 
-Client::Client(Payment* payment, CashierPreference* preference, int _totalItems, double _totalItemsValue):
+Client::Client(Payment* payment, CashierPreference* preference, int _totalItems, double _totalItemsValue, int _arrivalTime):
 payment(payment),
 preference(preference),
 _totalItems(_totalItems),
-_totalItemsValue(_totalItemsValue)
+_totalItemsValue(_totalItemsValue),
+_arrivalTime(_arrivalTime)
 {}
 
 Client::~Client()
@@ -57,6 +58,11 @@ int Client::exitTime() const
 void Client::setExitTime(int _exitTime)
 {
     _exitTime = _exitTime;
+}
+
+int Client::arrivalTime() const
+{
+    return _arrivalTime;
 }
 
 }

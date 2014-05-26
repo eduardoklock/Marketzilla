@@ -32,7 +32,7 @@ void Market::simulation()
     {
         if(currentTime % arrivalTimeCliet == 0 && currentTime < totalSimulationTime)
         {
-            Client client = factory.makeClient();
+            Client client = factory.makeClient(currentTime);
             if(!client.chooseCashier(cashiers))
             {
                 ++givenUpClients;
