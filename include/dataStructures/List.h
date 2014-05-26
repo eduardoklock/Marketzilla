@@ -16,8 +16,8 @@ class List{
     virtual T popBack() = 0;
     virtual T remove(int position) = 0;
 
-    virtual T front() = 0;
-    virtual T back() = 0;
+    virtual T front() const = 0;
+    virtual T back() const = 0;
     virtual T at(int position) const = 0;
 };
 

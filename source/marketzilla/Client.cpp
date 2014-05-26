@@ -49,7 +49,7 @@ double Client::totalItemsValue() const
     return _totalItemsValue;
 }
 
-int Client::exitTime()
+int Client::exitTime() const
 {
     return _exitTime;
 }

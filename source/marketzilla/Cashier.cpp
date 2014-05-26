@@ -21,9 +21,18 @@ Cashier::Cashier():
     totalWaitingTime(0)
 {}
 
-void Cashier::update(int curretTime)
+void Cashier::update(int currentTime)
 {
-
+    if (_queue.isEmpty())
+        return;
+    const Client &firstClient = _queue.front();
+    if (firstClient.exitTime() == currentTime) {
+        ++_servedClients;
+        //totalWaitingTime += currentTime - firstClient.timeOfArrival();
+        _totalProfit += firstClient.totalItemsValue();
+        _queueItems -= firstClient.totalItems();
+        _queue.pop();
+    }
 }
 
 const std::string Cashier::attendantName() const

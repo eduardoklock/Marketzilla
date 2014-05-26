@@ -158,13 +158,13 @@ public:
 		return element;
 	}
 
-	T front()
+	T front() const
 	{
 		checkEmpty();
 		return first->element;
 	}
 
-	T back()
+	T back() const
 	{
 		checkEmpty();
 		return last->element;

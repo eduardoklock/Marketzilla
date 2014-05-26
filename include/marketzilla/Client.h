@@ -19,7 +19,7 @@ public:
     Payment* makePayment() const;
     int totalItems() const;
     double totalItemsValue() const;
-    int exitTime();
+    int exitTime() const;
     void setExitTime(int);
 
 private:

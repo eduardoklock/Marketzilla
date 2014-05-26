@@ -112,13 +112,13 @@ public:
 		return p->element;
 	}
 
-	T front()
+	T front() const
 	{
 		checkEmpty();
 		return first->element;
 	}
 
-    T back()
+    T back() const
     {
     	return at(_size - 1);
     }
