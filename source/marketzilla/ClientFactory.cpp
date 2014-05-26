@@ -7,7 +7,7 @@
 
 namespace marketzilla{
 
-Client ClientFactory::makeClient()
+Client ClientFactory::makeClient(int currentTime)
 {
     Payment* payment;
     CashierPreference* preference;
@@ -39,7 +39,7 @@ Client ClientFactory::makeClient()
         _totalItemsValue = _totalItemsValue + rand() % 90 + 1;      
     }
 
-    return Client(payment, preference, _totalItems, _totalItemsValue);
+    return Client(payment, preference, _totalItems, _totalItemsValue, currentTime);
 }
 
 }
