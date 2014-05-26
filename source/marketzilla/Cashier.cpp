@@ -3,8 +3,10 @@
 
 namespace marketzilla {
 
-Cashier::Cashier(const Attendant& attendant):
-    _attendant(attendant),
+Cashier::Cashier(const std::string& name, double salary, int eficiency):
+    _name(name),
+    _salary(salary),
+    _eficiency(eficiency),
     _queue(),
     _queueItems(0),
     _servedClients(0),
@@ -13,7 +15,9 @@ Cashier::Cashier(const Attendant& attendant):
 {}
 
 Cashier::Cashier():
-    _attendant("", 0.0, 0),
+    _name(""),
+    _salary(0),
+    _eficiency(0),
     _queue(),
     _queueItems(0),
     _servedClients(0),
@@ -35,9 +39,19 @@ void Cashier::update(int currentTime)
     }
 }
 
-const std::string Cashier::attendantName() const
+std::string Cashier::attendantName() const
 {
-    return _attendant.name();
+    return _name;
+}
+
+double Cashier::attendantSalary() const
+{
+    return _salary;
+}
+
+int Cashier::attendantEficiency() const
+{
+    return _eficiency;
 }
 
 double Cashier::averageWaitingTime() const

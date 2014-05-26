@@ -5,14 +5,14 @@
 
 namespace marketzilla {
 
-Market::Market(string marketName,int totalSimulationTime, int arrivalTimeCliet):
-marketName(marketName),
-totalSimulationTime(totalSimulationTime),
-arrivalTimeCliet(arrivalTimeCliet),
-currentTime(0),
-givenUpClients(0),
-totalInjury(0),
-cashiers()
+Market::Market(const string& marketName, int totalSimulationTime, int arrivalTimeCliet):
+    marketName(marketName),
+    totalSimulationTime(totalSimulationTime),
+    arrivalTimeCliet(arrivalTimeCliet),
+    currentTime(0),
+    givenUpClients(0),
+    totalInjury(0),
+    cashiers()
 {}
 
 void Market::addCashiers(Cashier& cashier)

@@ -1,13 +1,17 @@
 #ifndef _Market_h_
 #define _Market_h_
 
+#include <string>
+
 #include "Cashier.h"
+
+using std::string;
 
 namespace marketzilla {
 
 class Market{
 public:
-    Market(string, int, int);
+    Market(const string&, int, int);
     void addCashiers(Cashier&);
     void simulation();
     bool allQueueEmpty();

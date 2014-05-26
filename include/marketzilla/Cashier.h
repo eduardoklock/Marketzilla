@@ -5,7 +5,6 @@
 
 #include "dataStructures/Queue.h"
 
-#include "Attendant.h"
 #include "Client.h"
 
 using dataStructures::Queue;
@@ -14,11 +13,13 @@ namespace marketzilla {
 
 class Cashier {
 public:
-    Cashier(const Attendant&);
+    Cashier(const std::string&, double, int);
 
     Cashier();
 
-    const std::string attendantName() const;
+    std::string attendantName() const;
+    double attendantSalary() const;
+    int attendantEficiency() const;
 
     int clientsServed() const;
     double averageWaitingTime() const;
@@ -33,7 +34,10 @@ public:
     void update(int);
 
 private:
-    Attendant _attendant;
+    std::string _name;
+    double _salary;
+    int _eficiency;
+
     Queue<Client> _queue;
     int _queueItems;
     int _servedClients;
