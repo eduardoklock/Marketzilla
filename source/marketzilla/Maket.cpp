@@ -15,7 +15,7 @@ Market::Market(const string& marketName, int totalSimulationTime, int arrivalTim
     cashiers()
 {}
 
-void Market::addCashiers(Cashier& cashier)
+void Market::addCashiers(const Cashier& cashier)
 {
     cashiers.push_back(cashier);
 }
