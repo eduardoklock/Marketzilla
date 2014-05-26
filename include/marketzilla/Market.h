@@ -12,7 +12,7 @@ namespace marketzilla {
 class Market{
 public:
     Market(const string&, int, int);
-    void addCashiers(Cashier&);
+    void addCashiers(const Cashier&);
     void simulation();
     bool allQueueEmpty();
 	
