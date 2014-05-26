@@ -5,20 +5,19 @@
 
 namespace marketzilla {
 
-Market::Market(string marketName,int totalSimulationTime, int arrivalTimeCliet, CircularList<Cashier>* cashiers):
+Market::Market(string marketName,int totalSimulationTime, int arrivalTimeCliet):
 marketName(marketName),
 totalSimulationTime(totalSimulationTime),
 arrivalTimeCliet(arrivalTimeCliet),
-cashiers(cashiers),
 currentTime(0),
 givenUpClients(0),
 totalInjury(0)
-{}
-
-void Market::creatCashiers(const string& name, double salary, int eficiency)
 {
-    Attendant attendant = Attendant(name, salary, eficiency);
-    Cashier cashier = Cashier(attendant);
+    cashiers = new CircularList<Cashier>;
+}
+
+void Market::addCashiers(Cashier& cashier)
+{
     cashiers->push_back(cashier);
 }
 

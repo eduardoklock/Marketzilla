@@ -7,8 +7,8 @@ namespace marketzilla {
 
 class Market{
 public:
-    Market(string, int, int, CircularList<Cashier>*);
-    void creatCashiers(const string&, double, int);
+    Market(string, int, int);
+    void addCashiers(Cashier&);
     void simulation();
     bool allQueueEmpty();
 	
