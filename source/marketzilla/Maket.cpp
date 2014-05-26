@@ -38,10 +38,6 @@ void Market::simulation()
                 ++givenUpClients;
                 totalInjury = totalInjury + (client.totalItemsValue()*3);
             }
-            else
-            {
-                //calculo do cashier para setar tempo de saida....
-            }
         }
         auto i = cashiers.begin();
         while(i != cashiers.end())

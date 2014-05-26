@@ -27,9 +27,10 @@ Cashier::Cashier():
 
 void Cashier::update(int currentTime)
 {
-    if (_queue.isEmpty())
-        return;
+    if (_queue.isEmpty()) return;
+
     const Client &firstClient = _queue.front();
+
     if (firstClient.exitTime() == currentTime) {
         ++_servedClients;
         //totalWaitingTime += currentTime - firstClient.timeOfArrival();
@@ -56,7 +57,7 @@ int Cashier::attendantEficiency() const
 
 double Cashier::averageWaitingTime() const
 {
-    return totalWaitingTime/_servedClients;
+    return ((double)totalWaitingTime)/_servedClients;
 }
 
 int Cashier::clientsServed() const
@@ -87,6 +88,7 @@ int Cashier::queueLength() const
 void Cashier::enterQueue(const Client& client)
 {
     _queueItems += client.totalItems();
+    //client.setExitTime();
     _queue.push(client);
 }
 
