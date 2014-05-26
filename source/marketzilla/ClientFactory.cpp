@@ -15,19 +15,19 @@ Client ClientFactory::makeClient(int currentTime)
     double _totalItemsValue;
     if(rand() % 5 == 0)
     {
-        Payment* payment = new Cash();
+        payment = new Cash();
     }
     else
     {
-        Payment* payment = new Check();
+        payment = new Check();
     }
     if(rand() % 2 == 0)
     {
-        CashierPreference* preference = new ShorterQueue();
+        preference = new ShorterQueue();
     }
     else
     {
-        CashierPreference* preference = new LessItems();
+        preference = new LessItems();
     }
 
     _totalItems = rand() % 99 + 2;

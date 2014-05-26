@@ -22,15 +22,23 @@ void Market::addCashiers(const Cashier& cashier)
 
 bool Market::allQueueEmpty()
 {
+    auto i = cashiers.begin();
+    while(i != cashiers.end())
+    {
+        if(i->queueLength() != 0)
+        {
+            return false;
+        }
+    }
     return true;
 }
 
 void Market::simulation()
 {
     ClientFactory factory = ClientFactory();
-    while(currentTime != totalSimulationTime && allQueueEmpty())
+    while(currentTime < totalSimulationTime)
     {
-        if(currentTime % arrivalTimeCliet == 0 && currentTime < totalSimulationTime)
+        if(currentTime % arrivalTimeCliet == 0)
         {
             Client client = factory.makeClient(currentTime);
             if(!client.chooseCashier(cashiers))
@@ -47,6 +55,15 @@ void Market::simulation()
         }
         ++currentTime;
 
+    }
+    while(!allQueueEmpty())
+    {
+        auto i = cashiers.begin();
+        while(i != cashiers.end())
+        {
+            i->update(currentTime);
+            ++i;
+        }
     }
 }
 

@@ -12,10 +12,7 @@ _arrivalTime(_arrivalTime)
 {}
 
 Client::~Client()
-{
-    //delete payment;
-    //delete preference;
-}
+{}
 
 bool Client::chooseCashier(CircularList<Cashier>& cashiers) 
 {

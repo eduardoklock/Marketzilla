@@ -2,7 +2,13 @@
 #include <fstream>
 #include <string>
 
+#include "marketzilla/Market.h"
+#include "marketzilla/Cashier.h"
+
 using namespace std;
+
+using marketzilla::Market;
+using marketzilla::Cashier;
 
 int main(int argc, char** argv)
 {
@@ -20,12 +26,16 @@ int main(int argc, char** argv)
         file >> timeOfClientsArive;
         file >> numberOfCashiers;
 
-        cout << "Markte Name: "<< marketName << endl;
-        cout << "Simulation Time: " << timeOfSimulation << endl;
-        cout << "Clients arraival Delay: " <<timeOfClientsArive <<endl;
+        timeOfSimulation *= 3600; 
+
+        cout << "Market Name: "<< marketName << endl;
+        cout << "Simulation Time: " << timeOfSimulation << " seconds" << endl;
+        cout << "Clients arraival Delay: " << timeOfClientsArive << " seconds" << endl;
         cout << "Number of Cashiers: "<< numberOfCashiers << endl;
 
-        int salary;
+        Market market{marketName, timeOfSimulation, timeOfClientsArive};
+
+        double salary;
         int eficiency;
         string name;
         for(int i = 0; i < numberOfCashiers; ++i)
@@ -33,19 +43,20 @@ int main(int argc, char** argv)
             file >> name;
             file >> eficiency;
             file >> salary;
-            //market.add(Cashier(name,salary,eficiency));
+            market.addCashiers(Cashier{name, salary, eficiency});
             cout << "Cashier: " << name << " " << eficiency << " " << salary << endl;
         }
 
         file.close();
+
+        market.simulation();
     }
     else
     {
         cout << "file not finded" << endl;
     }
 
-    //Market market = Market(marketName, timeOfSimulation, timeOfClientsArive);
-    //Market.simulate();
+    
     
     return 0;
 }
