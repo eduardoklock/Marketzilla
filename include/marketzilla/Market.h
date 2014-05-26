@@ -13,7 +13,7 @@ public:
     bool allQueueEmpty();
 	
 private:
-    CircularList<Cashier>* cashiers;
+    CircularList<Cashier> cashiers;
     int currentTime;
     int givenUpClients;
     int totalInjury;

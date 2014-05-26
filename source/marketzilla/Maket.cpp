@@ -11,14 +11,13 @@ totalSimulationTime(totalSimulationTime),
 arrivalTimeCliet(arrivalTimeCliet),
 currentTime(0),
 givenUpClients(0),
-totalInjury(0)
-{
-    cashiers = new CircularList<Cashier>;
-}
+totalInjury(0),
+cashiers()
+{}
 
 void Market::addCashiers(Cashier& cashier)
 {
-    cashiers->push_back(cashier);
+    cashiers.push_back(cashier);
 }
 
 bool Market::allQueueEmpty()
@@ -34,7 +33,7 @@ void Market::simulation()
         if(currentTime % arrivalTimeCliet == 0 && currentTime < totalSimulationTime)
         {
             Client client = factory.makeClient();
-            if(!client.chooseCashier(*cashiers))
+            if(!client.chooseCashier(cashiers))
             {
                 ++givenUpClients;
                 totalInjury = totalInjury + (client.totalItemsValue()*3);
@@ -44,8 +43,8 @@ void Market::simulation()
                 //calculo do cashier para setar tempo de saida....
             }
         }
-        auto i = cashiers->begin();
-        while(i != cashiers->end())
+        auto i = cashiers.begin();
+        while(i != cashiers.end())
         {
             i->update(currentTime);
             ++i;
