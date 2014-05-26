@@ -31,8 +31,6 @@ bool Client::chooseCashier(CircularList<Cashier>& cashiers)
         ++i;
     }
     return false;
-
-
 }
 
 Payment* Client::makePayment() const

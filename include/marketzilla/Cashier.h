@@ -29,7 +29,7 @@ public:
 
     int queueItems() const;
     int queueLength() const;
-    void enterQueue(const Client&);
+    void enterQueue(Client&);
 
     void update(int);
 

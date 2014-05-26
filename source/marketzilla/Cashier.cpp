@@ -12,7 +12,12 @@ Cashier::Cashier(const std::string& name, double salary, int eficiency):
     _servedClients(0),
     _totalProfit(0),
     totalWaitingTime(0)
-{}
+{
+    if(_eficiency == 3)
+    {
+        _eficiency++;
+    }
+}
 
 Cashier::Cashier():
     _name(""),
@@ -85,10 +90,28 @@ int Cashier::queueLength() const
     return _queue.size();
 }
 
-void Cashier::enterQueue(const Client& client)
+void Cashier::enterQueue(Client& client)
 {
     _queueItems += client.totalItems();
-    //client.setExitTime();
+
+    int auxTime = client.arrivalTime() + _eficiency*client.totalItems();
+
+    if(_eficiency == 1){
+        auxTime += 10*client.makePayment()->delay();
+    }
+    else if(_eficiency == 2){
+        auxTime += 25*client.makePayment()->delay();
+    }
+    else if(_eficiency == 4){
+        auxTime += 60*client.makePayment()->delay();
+    }
+
+    if(!_queue.isEmpty()) {
+        auxTime += _queue.back().exitTime();
+    }
+
+    client.setExitTime(auxTime);
+
     _queue.push(client);
 }
 

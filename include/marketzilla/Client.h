@@ -30,8 +30,6 @@ private:
     double _totalItemsValue;
     int _exitTime;
     int _arrivalTime;
-    
-    
 };
 }
 #endif

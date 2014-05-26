@@ -2,9 +2,6 @@
 
 namespace marketzilla{
 
-Cash::~Cash()
-{}
-
 double Cash::delay() const
 {
     return 0;
