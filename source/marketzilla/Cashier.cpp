@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 #include "marketzilla/Cashier.h"
 
 namespace marketzilla {
@@ -32,13 +33,14 @@ Cashier::Cashier():
 
 void Cashier::update(int currentTime)
 {
-    if (_queue.isEmpty()) return;
+    if (_queue.isEmpty()){
+        return;
+    } 
 
     const Client &firstClient = _queue.front();
-
     if (firstClient.exitTime() == currentTime) {
         ++_servedClients;
-        //totalWaitingTime += currentTime - firstClient.timeOfArrival();
+        totalWaitingTime += currentTime - firstClient.arrivalTime();
         _totalProfit += firstClient.totalItemsValue();
         _queueItems -= firstClient.totalItems();
         _queue.pop();

@@ -1,6 +1,8 @@
 #ifndef _CircularList_h_
 #define _CircularList_h_
 
+#include <iterator>
+
 #include <iostream>
 #include <stdexcept>
 
@@ -228,6 +230,10 @@ public:
         return const_iterator(_sentinel);
     }
 };
+
+using std::begin;
+using std::end;
+
 }
 
 #endif 

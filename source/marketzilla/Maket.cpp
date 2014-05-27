@@ -1,7 +1,8 @@
+#include <string>
+#include <iostream>
+
 #include "marketzilla/Market.h"
 #include "marketzilla/ClientFactory.h"
-#include <string>
-
 
 namespace marketzilla {
 
@@ -22,11 +23,8 @@ void Market::addCashiers(const Cashier& cashier)
 
 bool Market::allQueueEmpty()
 {
-    auto i = cashiers.begin();
-    while(i != cashiers.end())
-    {
-        if(i->queueLength() != 0)
-        {
+    for (auto &i : cashiers){
+        if(i.queueLength() != 0){
             return false;
         }
     }
@@ -35,8 +33,8 @@ bool Market::allQueueEmpty()
 
 void Market::simulation()
 {
-    ClientFactory factory = ClientFactory();
-    while(currentTime < totalSimulationTime)
+    ClientFactory factory;
+    while (currentTime < totalSimulationTime)
     {
         if(currentTime % arrivalTimeCliet == 0)
         {
@@ -44,28 +42,38 @@ void Market::simulation()
             if(!client.chooseCashier(cashiers))
             {
                 ++givenUpClients;
-                totalInjury = totalInjury + (client.totalItemsValue()*3);
+                totalInjury = totalInjury + (client.totalItemsValue()*3); 
             }
+
         }
-        auto i = cashiers.begin();
-        while(i != cashiers.end())
+
+        for (auto &i : cashiers)
         {
-            i->update(currentTime);
-            ++i;
+            i.update(currentTime);
         }
         ++currentTime;
-
     }
+
     while(!allQueueEmpty())
     {
-        auto i = cashiers.begin();
-        while(i != cashiers.end())
+        for (auto &i : cashiers)
         {
-            i->update(currentTime);
-            ++i;
+            i.update(currentTime);
         }
+        ++currentTime;
     }
-}
 
+    for (auto i : cashiers)
+    {
+        std::cout << i.attendantName() << " :" << std::endl ;
+        std::cout << "  servedClients : " << i.clientsServed() << std::endl;
+        //std::cout << "  queueLength : " << i.queueLength() << std::endl;
+        std::cout << "  averageWaitingTime : " << i.averageWaitingTime() << std::endl;
+        std::cout << "  totalProfit : " << i.totalProfit() << std::endl;
+        std::cout << "  averageProfit : " << i.averageProfit() << std::endl;
+    }
+
+    std::cout << "givenUpClients: " << givenUpClients << std::endl;   
+}
 
 }

@@ -1,6 +1,8 @@
 #include "marketzilla/Client.h"
 #include "marketzilla/Cashier.h"
 
+#include <iostream>
+
 namespace marketzilla{
 
 Client::Client(Payment* payment, CashierPreference* preference, int _totalItems, double _totalItemsValue, int _arrivalTime):
@@ -17,15 +19,13 @@ Client::~Client()
 bool Client::chooseCashier(CircularList<Cashier>& cashiers) 
 {
 
-    auto i = cashiers.begin();
-    while(i != cashiers.end())
+    for (auto &i : cashiers)
     {
-        if(i->queueLength() < 10)
+        if(i.queueLength() < 10)
         {
             preference->chooseCashier(cashiers).enterQueue(*this);
             return true;
         }
-        ++i;
     }
     return false;
 }
@@ -50,9 +50,9 @@ int Client::exitTime() const
     return _exitTime;
 }
 
-void Client::setExitTime(int _exitTime)
+void Client::setExitTime(int exitTime)
 {
-    _exitTime = _exitTime;
+    _exitTime = exitTime;
 }
 
 int Client::arrivalTime() const

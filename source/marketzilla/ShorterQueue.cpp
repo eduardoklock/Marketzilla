@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "dataStructures/CircularList.h"
 #include "marketzilla/ShorterQueue.h"
 #include "marketzilla/Cashier.h"
@@ -8,23 +10,12 @@ namespace marketzilla{
 
 Cashier& ShorterQueue::chooseCashier(CircularList<Cashier>& cashiers)
 {
-
-    auto j = cashiers.begin();
-    auto i = cashiers.begin();
-    Cashier& cashier = *i;
-    while(i != cashiers.end())
+    auto a = std::min_element(begin(cashiers), end(cashiers), [](const Cashier &a, const Cashier &b)
     {
-        ++j;
-        if(i->queueLength() > j->queueLength())
-        {
-            Cashier& cashier = *j;
-        }
-        ++i;
-  
-    }
+        return a.queueLength() < b.queueLength();
+    });
 
-    return cashier;
-
+    return *a;
 }
 
 }

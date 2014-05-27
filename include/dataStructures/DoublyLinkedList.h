@@ -192,7 +192,7 @@ private:
 		if (position >= _size || position < 0) throw std::out_of_range("Out of bounds!");
 	}
 
-	int _size;
+	int _size {0};
 
 	Node* first;
 	Node* last;
