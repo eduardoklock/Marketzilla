@@ -8,6 +8,11 @@ namespace marketzilla{
 class Check : public Payment {
 public:
     ~Check();
+
+/**
+ * @brief Retorna o atraso quando se paga com cheque
+ */
+
 	double delay() const;
 };
 
