@@ -12,8 +12,6 @@ public:
 /**
  * @brief Retorna o atraso quando se paga com dinheiro
  */
-
-
 	double delay() const;
 };
 

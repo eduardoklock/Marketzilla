@@ -17,11 +17,11 @@ public:
 /**
  * @brief Constroi o caixa com seu nome, salario e eficiencia
  *
- * @param Nome do caixa, salario e eficiencia
- */
-
-
-    Cashier(const std::string&, double, int);
+ * @param name Nome do caixa
+ * @param salary salario do caixa
+ * @param eficiency eficiencia do caixa
+*/
+    Cashier(const std::string& name, double salary, int eficiency);
 
     Cashier();
 
@@ -30,7 +30,6 @@ public:
  *
  * @return O nome do caixa
  */
-
     std::string attendantName() const;
 
 /**
@@ -38,8 +37,6 @@ public:
  *
  * @return Salario caixa
  */
-
-
     double attendantSalary() const;
 
 /**
@@ -47,17 +44,13 @@ public:
  *
  * @return Eficiencia do caixa
  */
-
-
-    int attendantEficiency() const;
+     int attendantEficiency() const;
 
 /**
  * @brief Retorna numero de clientes atendidos
  *
  * @return Clientes servidos
  */
-
-
     int clientsServed() const;
 
 /**
@@ -65,8 +58,6 @@ public:
  *
  * @return Média de tempo de espera
  */
-
-
     double averageWaitingTime() const;
 
 /**
@@ -74,8 +65,6 @@ public:
  *
  * @return Faturamento total
  */
-
-
     double totalProfit() const;
 
 /**
@@ -83,22 +72,16 @@ public:
  *
  * @return Faturamento médio
  */
-
-
     double averageProfit() const;
 
 /**
  * @brief Retorna total de itens na fila do caixa
  */
-
-
-    int queueItems() const;
+     int queueItems() const;
 
 /**
  * @brief Retorna comprimento da fila do caixa
  */
-
-
     int queueLength() const;
 
 /**
@@ -106,11 +89,9 @@ public:
  *
  * @details Adiciona um cliente na fila e define seu tempo de saída a partir da eficiencia do caixa e a forma de pagamento
  *
- * @param Recebe a referencia de um cliente para adiciona-lo na fila
+ * @param client Recebe a referencia de um cliente para adiciona-lo na fila
  */
-
-
-    void enterQueue(Client&);
+    void enterQueue(Client& client);
 
 /**
  * @brief Atualiza o caixa e sua fila
@@ -118,11 +99,9 @@ public:
  * @details Se fila estiver vazia nao faz nada, senao ve se o tempo de saida do cliente é o tempo atual 
  *aumenta e diminui os atributos necessarios e retira o cliente da fila
  *
- * @param Recebe o tempo atual da simulação
+ * @param currentTime Recebe o tempo atual da simulação
  */
-
-
-    void update(int);
+    void update(int currentTime);
 
 private:
     std::string _name;

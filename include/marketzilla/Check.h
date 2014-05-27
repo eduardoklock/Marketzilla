@@ -12,7 +12,6 @@ public:
 /**
  * @brief Retorna o atraso quando se paga com cheque
  */
-
 	double delay() const;
 };
 

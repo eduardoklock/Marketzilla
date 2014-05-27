@@ -34,7 +34,7 @@ Client ClientFactory::makeClient(int currentTime)
     
 
  
-    for(int i = 0; i < _totalItems; i++)
+    for(int i = 0; i < _totalItems; ++i)
     {
         _totalItemsValue += rand() % 90 + 1;      
     }
