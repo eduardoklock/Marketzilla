@@ -37,7 +37,7 @@ int main(int argc, char** argv)
         cin >> timeOfSimulation;
         cout << "insert clients interval arraival time: " << endl;
         cin >> timeOfClientsArive;
-        cout << "insert number of cashiers time: " << endl;
+        cout << "insert number of cashiers: " << endl;
         cin >> numberOfCashiers;
 
         timeOfSimulation *= 3600; 
@@ -66,6 +66,7 @@ int main(int argc, char** argv)
         }
 
         market.simulation();
+        cout << marketName << endl;   
     }
     else if(argc == 3 && !strcmp("-f",argv[1]))
     {
@@ -106,6 +107,7 @@ int main(int argc, char** argv)
             file.close();
 
             market.simulation();
+            cout << marketName << endl;   
         }
         else
         {
@@ -117,7 +119,7 @@ int main(int argc, char** argv)
         cout << "use -f <name_of_data_file>" << endl;
     }
 
-    
+
     
     return 0;
 }

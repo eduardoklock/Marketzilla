@@ -13,6 +13,7 @@ Market::Market(const string& marketName, int totalSimulationTime, int arrivalTim
     currentTime(0),
     givenUpClients(0),
     totalInjury(0),
+    finalProfit(0),
     cashiers()
 {}
 
@@ -66,14 +67,17 @@ void Market::simulation()
     for (auto i : cashiers)
     {
         std::cout << i.attendantName() << " :" << std::endl ;
-        std::cout << "  servedClients : " << i.clientsServed() << std::endl;
-        //std::cout << "  queueLength : " << i.queueLength() << std::endl;
-        std::cout << "  averageWaitingTime : " << i.averageWaitingTime() << std::endl;
-        std::cout << "  totalProfit : " << i.totalProfit() << std::endl;
-        std::cout << "  averageProfit : " << i.averageProfit() << std::endl;
+        std::cout << "  Served Clients: " << i.clientsServed() << std::endl;
+        std::cout << "  Average Waiting Time: " << i.averageWaitingTime() << std::endl;
+        std::cout << "  Total Cashier Profit: " << i.totalProfit() << std::endl;
+        std::cout << "  Profit less salary: " << i.totalProfit() - i.attendantSalary() << std::endl;
+        finalProfit = finalProfit + i.totalProfit();
+        std::cout << "  Aerage Cashier Profit : " << i.averageProfit() << std::endl;
     }
 
-    std::cout << "givenUpClients: " << givenUpClients << std::endl;   
+    std::cout << "\nGiven Up Clients: " << givenUpClients << std::endl;  
+    std::cout << "Total Profit: " << finalProfit << std::endl;
+    std::cout << "Total Injury: " << totalInjury << std::endl;
 }
 
 }

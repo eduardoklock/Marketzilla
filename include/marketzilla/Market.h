@@ -23,6 +23,7 @@ private:
     int totalInjury;
     int totalSimulationTime;
     int arrivalTimeCliet;
+    int finalProfit;
     string marketName;
 
 };
